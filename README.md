@@ -48,7 +48,10 @@ Connect both CAN1 and CAN2 sides to your vehicle CAN lines via twisted pair cabl
 ---
 
 ### 📷 Example connection diagram
-![STM32F105 CAN Filter Wiring](https://github.com/user-attachments/assets/f9c2411a-159a-41d5-8803-233fb4f8d1c7)
+
+![STM32F105 CAN Filter Wiring](https://github.com/user-attachments/assets/bf8325ea-4aa1-4bc7-ba7b-1fb3587cd790)
+
+
 
 
 
