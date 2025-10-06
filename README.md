@@ -27,8 +27,8 @@ Below is the annotated pinout of the commonly used Chinese dual-CAN filter board
 
 | Channel | STM32 Pins | Transceiver | Description |
 |----------|-------------|-------------|--------------|
-| **CAN1** | PB8 (RX), PB9 (TX) | TJA1024 | Connects to vehicle CAN 1 |
-| **CAN2** | PB5 (RX), PB6 (TX) | TJA1024 | Connects to vehicle CAN 2 |
+| **CAN1** | PB8 (RX), PB9 (TX) | TJA1042 | Connects to vehicle CAN 1 |
+| **CAN2** | PB5 (RX), PB6 (TX) | TJA1042 | Connects to vehicle CAN 2 |
 
 > 💡 *Each CAN transceiver should have a 120 Ω termination resistor if not already present.*
 
