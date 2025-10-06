@@ -1,6 +1,6 @@
 ## ⚙️ Hardware Pinout — STM32F105 CAN Filter Board
 
-This CAN-Filter board is based on **STM32F105RBT6** and uses two **TJA1024 / TJA1050** transceivers.  
+This CAN-Filter board is based on **STM32F105RBT6** and uses two **TJA1042 / TJA1050** transceivers.  
 Below is the annotated pinout of the commonly used Chinese dual-CAN filter board.
 
 ### 📷 Board pinout
