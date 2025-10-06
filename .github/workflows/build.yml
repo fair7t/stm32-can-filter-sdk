@@ -1,0 +1,40 @@
+name: Build SDK
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout SDK
+        uses: actions/checkout@v4
+
+      - name: Add SSH key for private core
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.CORE_SSH_KEY }}
+
+      - name: Fetch private core
+        run: |
+          git clone git@github.com:fair7t/stm32-can-filter-core.git core
+
+      - name: Build core static lib
+        run: |
+          sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi make
+          make -C core
+          mkdir -p lib
+          cp core/build/libcanfilter_core.a lib/
+
+      - name: Pack SDK
+        run: |
+          tar -czf sdk_bundle.tar.gz include/ examples/ docs/ lib/
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          files: |
+            lib/libcanfilter_core.a
+            sdk_bundle.tar.gz
