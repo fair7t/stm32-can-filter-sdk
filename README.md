@@ -5,7 +5,6 @@ Below is the annotated pinout of the commonly used Chinese dual-CAN filter board
 
 ### 📷 Board pinout
 
-![STM32F105 CAN Filter Pinout](https://github.com/user-attachments/assets/6e166e73-10c3-4867-b0b3-edf2469b19cc)
 ![STM32F105 CAN Filter Wiring](https://github.com/user-attachments/assets/b6faee2b-14d8-4aa8-9805-4c579bddd6f9)
 
 ---
