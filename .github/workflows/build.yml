@@ -4,12 +4,20 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout SDK
         uses: actions/checkout@v4
+
+      - name: Add github.com to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 
       - name: Add SSH key for private core
         uses: webfactory/ssh-agent@v0.8.0
@@ -29,6 +37,8 @@ jobs:
 
       - name: Pack SDK
         run: |
+          # .keep-файлы помогут, если каталоги пустые
+          touch include/.keep examples/.keep docs/.keep || true
           tar -czf sdk_bundle.tar.gz include/ examples/ docs/ lib/
 
       - name: Release
